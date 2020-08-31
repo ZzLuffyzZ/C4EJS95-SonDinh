@@ -154,7 +154,7 @@ The difference between them are assignability.
 //   }
 // }
 
-Question 10: Write a script to calculate the BMI (Body Mass Index) of a person
+//Question 10: Write a script to calculate the BMI (Body Mass Index) of a person
 const yourWeight = prompt("Your weight in kg");
 const yourHeight = prompt("Your height in cm") / 100;
 const BMI = (yourWeight / yourHeight ** 2).toFixed(2);
