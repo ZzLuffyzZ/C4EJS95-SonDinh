@@ -21,8 +21,8 @@
  */
 
 //Question 3:
-const testCase = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(...testCase);
+// const testCase = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(...testCase);
 
 // Question 4: Write a script to simulate a clothes shop, asking and performing certain tasks from users
 const userOpt = prompt(
@@ -39,9 +39,7 @@ function printCurrentItems() {
 
 switch (userOpt) {
   case "c":
-    currentItems[currentItems.length] = prompt(
-      "Enter the name of the new item"
-    );
+    currentItems.push(prompt("Enter the name of the new item"));
     alert("Done");
     printCurrentItems();
     break;
@@ -64,125 +62,125 @@ switch (userOpt) {
 
 //Question 5: Write a script to ask users enter a sequence of numbers,
 //the Numbers are separated by commas, calculate the sum of the numbers and show it to users
-const inputNums = prompt(
-  "Enter a squence of Numbers, seperated by commas (,)"
-).split(",");
-let sum = 0;
+// const inputNums = prompt(
+//   "Enter a squence of Numbers, seperated by commas (,)"
+// ).split(",");
+// let sum = 0;
 
-for (let i = 0; i < inputNums.length; i++) {
-  sum += Number(inputNums[i]);
-}
+// for (let i = 0; i < inputNums.length; i++) {
+//   sum += Number(inputNums[i]);
+// }
 
-alert(`The sum of them is ${sum}`);
+// alert(`The sum of them is ${sum}`);
 
-//Question 6: Write a script asking users to enter a sequence of numbers,
-//the numbers are separated by commas, find the smallest number and log it out to users
-let inputNums = prompt(
-  "Enter a squence of Numbers, seperated by commas (,)"
-).split(",");
+// //Question 6: Write a script asking users to enter a sequence of numbers,
+// //the numbers are separated by commas, find the smallest number and log it out to users
+// let inputNums = prompt(
+//   "Enter a squence of Numbers, seperated by commas (,)"
+// ).split(",");
 
-let minNum = Math.min(...inputNums);
+// let minNum = Math.min(...inputNums);
 
-alert(`The smallest number is ${minNum}`);
+// alert(`The smallest number is ${minNum}`);
 
-//Question 7: Create an array containing at least 5 numbers, then ask users enter a number,
-// perform a search to look for the number in the array, if the number is found, tell user
-//that with the index of it in the array, if not, also tell them so
-const arr = [3, 4, 6, -9, 10, -88, 2];
-const searchNum = prompt("Enter a number") - 0;
+// //Question 7: Create an array containing at least 5 numbers, then ask users enter a number,
+// // perform a search to look for the number in the array, if the number is found, tell user
+// //that with the index of it in the array, if not, also tell them so
+// const arr = [3, 4, 6, -9, 10, -88, 2];
+// const searchNum = prompt("Enter a number") - 0;
 
-if (!arr.includes(searchNum)) {
-  alert(`${searchNum} is NOT found in my array`);
-} else {
-  alert(`${searchNum} is FOUND in my array at index ${arr.indexOf(searchNum)}`);
-}
+// if (!arr.includes(searchNum)) {
+//   alert(`${searchNum} is NOT found in my array`);
+// } else {
+//   alert(`${searchNum} is FOUND in my array at index ${arr.indexOf(searchNum)}`);
+// }
 
-//Question 8:
-//8.1. Create an array to represent the sizes of your flock, and log all of your flock size:
-let myArr = [5, 7, 300, 90, 24, 50, 75];
-console.log("Hello, my name is Son and here is my sheep sizes:");
-console.log(...myArr);
+// //Question 8:
+// //8.1. Create an array to represent the sizes of your flock, and log all of your flock size:
+// let myArr = [5, 7, 300, 90, 24, 50, 75];
+// console.log("Hello, my name is Son and here is my sheep sizes:");
+// console.log(...myArr);
 
-//8.2.Add scripts to search for the biggest sheep in your list
-console.log(
-  `Now my biggest sheep has size ${Math.max(...myArr)}, let's shave it`
-);
+// //8.2.Add scripts to search for the biggest sheep in your list
+// console.log(
+//   `Now my biggest sheep has size ${Math.max(...myArr)}, let's shave it`
+// );
 
-//8.3.When your biggest sheer, its size will return to the default size, which is 8.
-myArr[myArr.indexOf(Math.max(...myArr))] = 8; //return to default size
-console.log("After shearing, here is my flock");
-console.log(...myArr);
+// //8.3.When your biggest sheer, its size will return to the default size, which is 8.
+// myArr[myArr.indexOf(Math.max(...myArr))] = 8; //return to default size
+// console.log("After shearing, here is my flock");
+// console.log(...myArr);
 
-//8.4 & 8.5.In the following month, EVERY sheep in your flock grow, they have their size increased by 50. Log them out
-for (let i = 0; i < 4; i++) {
-  console.log(`MONTH ${i + 1}`);
-  console.log(
-    "One month has passed, my sheeps have grown, here are their sizes"
-  );
-  for (let j = 0; j < myArr.length; j++) {
-    myArr[j] += 50;
-  }
-  console.log(...myArr);
-  if (i < 3) {
-    //Only shave the biggest sheep before the last month
-    console.log(
-      `Now my biggest sheep has size ${Math.max(...myArr)}, let's shave it`
-    );
-    myArr[myArr.indexOf(Math.max(...myArr))] = 8; //return to default size
-    console.log("After shearing, here is my flock");
-    console.log(...myArr);
-  }
-}
+// //8.4 & 8.5.In the following month, EVERY sheep in your flock grow, they have their size increased by 50. Log them out
+// for (let i = 0; i < 4; i++) {
+//   console.log(`MONTH ${i + 1}`);
+//   console.log(
+//     "One month has passed, my sheeps have grown, here are their sizes"
+//   );
+//   for (let j = 0; j < myArr.length; j++) {
+//     myArr[j] += 50;
+//   }
+//   console.log(...myArr);
+//   if (i < 3) {
+//     //Only shave the biggest sheep before the last month
+//     console.log(
+//       `Now my biggest sheep has size ${Math.max(...myArr)}, let's shave it`
+//     );
+//     myArr[myArr.indexOf(Math.max(...myArr))] = 8; //return to default size
+//     console.log("After shearing, here is my flock");
+//     console.log(...myArr);
+//   }
+// }
 
-//8.6.Write a program to calculate the total size of your sheep as well as the money you would have
-let sum = 0;
-for (let i = 0; i < myArr.length; i++) {
-  sum += myArr[i];
-}
-console.log(`My flock has size in total: ${sum}`);
-console.log(`I would get ${sum} * 2$ = ${sum * 2}`);
+// //8.6.Write a program to calculate the total size of your sheep as well as the money you would have
+// let sum = 0;
+// for (let i = 0; i < myArr.length; i++) {
+//   sum += myArr[i];
+// }
+// console.log(`My flock has size in total: ${sum}`);
+// console.log(`I would get ${sum} * 2$ = ${sum * 2}`);
 
-//Question 9:
-const colors = ["red", "gray", "blue", "purple", "cyan"];
-clear();
-let decrease = 0;
-for (let i = 4; i >= 0; i--) {
-  for (let j = 0; j < 4; j++) {
-    color(colors[i]);
-    fd(200 - decrease);
-    rt(90);
-  }
-  decrease += 30;
-}
+// //Question 9:
+// const colors = ["red", "gray", "blue", "purple", "cyan"];
+// clear();
+// let decrease = 0;
+// for (let i = 4; i >= 0; i--) {
+//   for (let j = 0; j < 4; j++) {
+//     color(colors[i]);
+//     fd(200 - decrease);
+//     rt(90);
+//   }
+//   decrease += 30;
+// }
 
-//Question 10:
-const namesArr = prompt("Enter a sequence of names").split(",");
-let newNamesArr = [];
+// //Question 10:
+// const namesArr = prompt("Enter a sequence of names").split(",");
+// let newNamesArr = [];
 
-for (let i = 0; i < namesArr.length; i++) {
-  newNamesArr[i] = "<" + namesArr[i] + ">";
-}
-alert(`${namesArr} => ${newNamesArr}`);
+// for (let i = 0; i < namesArr.length; i++) {
+//   newNamesArr[i] = "<" + namesArr[i] + ">";
+// }
+// alert(`${namesArr} => ${newNamesArr}`);
 
-//Question 11:
-const numbersArr = prompt("Enter a sequence of numbers").split(",");
-let oddNumbersArr = [];
-let j = 0;
+// //Question 11:
+// const numbersArr = prompt("Enter a sequence of numbers").split(",");
+// let oddNumbersArr = [];
+// let j = 0;
 
-for (let i = 0; i < numbersArr.length; i++) {
-  if (parseInt(numbersArr[i]) % 2 != 0) {
-    oddNumbersArr[j] = parseInt(numbersArr[i]);
-    j++;
-  }
-}
-alert(`${numbersArr} => ${oddNumbersArr}`);
+// for (let i = 0; i < numbersArr.length; i++) {
+//   if (parseInt(numbersArr[i]) % 2 != 0) {
+//     oddNumbersArr[j] = parseInt(numbersArr[i]);
+//     j++;
+//   }
+// }
+// alert(`${numbersArr} => ${oddNumbersArr}`);
 
-//Question 13:(from session 2):
-let numberOfPolygons = prompt("How many polygons");
-clear();
-for (let i = parseInt(numberOfPolygons); i > 2; i--) {
-  for (let j = 0; j < i; j++) {
-    fd(100);
-    rt(360 / i);
-  }
-}
+// //Question 13:(from session 2):
+// let numberOfPolygons = prompt("How many polygons");
+// clear();
+// for (let i = parseInt(numberOfPolygons); i > 2; i--) {
+//   for (let j = 0; j < i; j++) {
+//     fd(100);
+//     rt(360 / i);
+//   }
+// }
