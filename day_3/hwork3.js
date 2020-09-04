@@ -25,9 +25,9 @@ const testCase = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(...testCase);
 
 // Question 4: Write a script to simulate a clothes shop, asking and performing certain tasks from users
-let userOpt = prompt(
+const userOpt = prompt(
   "Hi there, welcome to shop admin panel, what do you want (C, R, U, D)?"
-);
+).toLowerCase();
 let currentItems = ["Jeans", "T-shirts", "Socks"];
 
 function printCurrentItems() {
@@ -49,13 +49,13 @@ switch (userOpt) {
     printCurrentItems();
     break;
   case "u":
-    let updatePos = prompt("Enter the position you want to update");
+    const updatePos = prompt("Enter the position you want to update");
     currentItems[updatePos - 1] = prompt("Enter the new name");
     alert("Done");
     printCurrentItems();
     break;
   case "d":
-    let deletePos = prompt("Enter the position you want to delete");
+    const deletePos = prompt("Enter the position you want to delete");
     currentItems.splice(deletePos - 1, 1);
     alert("Done");
     printCurrentItems();
