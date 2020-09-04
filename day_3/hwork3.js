@@ -150,7 +150,7 @@ for (let i = 4; i >= 0; i--) {
   for (let j = 0; j < 4; j++) {
     color(colors[i]);
     fd(200 - decrease);
-    lt(90);
+    rt(90);
   }
   decrease += 30;
 }
@@ -183,6 +183,6 @@ clear();
 for (let i = parseInt(numberOfPolygons); i > 2; i--) {
   for (let j = 0; j < i; j++) {
     fd(100);
-    lt(360 / i);
+    rt(360 / i);
   }
 }
