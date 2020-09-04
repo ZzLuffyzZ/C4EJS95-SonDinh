@@ -167,14 +167,16 @@ const numbersArr = prompt("Enter a sequence of numbers").split(",");
 let oddNumbersArr = [];
 let j = 0;
 
+//Solution 1: Move the odd numbers to a new array
 for (let i = 0; i < numbersArr.length; i++) {
-  if (parseInt(numbersArr[i]) % 2 != 0) {
+  if (parseInt(numbersArr[i]) % 2 !== 0) {
     oddNumbersArr[j] = parseInt(numbersArr[i]);
     j++;
   }
 }
 alert(`${numbersArr} => ${oddNumbersArr}`);
-
+//Solution 2: Use filter to extract the odd numbers
+//let oddNumbersArr = numbersArr.filter(x => x % 2 !== 0); (Solution from NVQ)
 //Question 13:(from session 2):
 let numberOfPolygons = prompt("How many polygons");
 clear();
