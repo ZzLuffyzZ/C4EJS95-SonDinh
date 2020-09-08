@@ -177,10 +177,11 @@ for (let i = 0; i < numbersArr.length; i++) {
 alert(`${numbersArr} => ${oddNumbersArr}`);
 //Solution 2: Use filter to extract the odd numbers
 //let oddNumbersArr = numbersArr.filter(x => x % 2 !== 0); (Solution from NVQ)
+
 //Question 13:(from session 2):
-let numberOfPolygons = prompt("How many polygons");
+const NUMBERS_POLYGONS = prompt("How many polygons");
 clear();
-for (let i = parseInt(numberOfPolygons); i > 2; i--) {
+for (let i = parseInt(NUMBERS_POLYGONS); i > 2; i--) {
   for (let j = 0; j < i; j++) {
     fd(100);
     rt(360 / i);
