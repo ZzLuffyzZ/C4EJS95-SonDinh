@@ -1,50 +1,5 @@
-//Bubble sort optimized
-// const arrSort = [3, 4, 1, 0, 9, 5, 1000, 2];
-// const lengthArr = arrSort.length;
-// for (let i = 0; i < lengthArr; i++) {
-//   let swapFlag = false;
-//   for (let j = 0; j < lengthArr; j++) {
-//     if (arrSort[j] > arrSort[j + 1]) {
-//       const temp = arrSort[j];
-//       arrSort[j] = arrSort[j + 1];
-//       arrSort[j + 1] = temp;
-//       swapFlag = true;
-//     }
-//   }
-//   if (!swapFlag) {
-//     break;
-//   }
-// }
-// console.log(...arrSort);
-
-//1. for and Object
-//1.1. x receives properties from product.
-//1.2
-// const product = {
-//   name: "Xiaomi rice cooker",
-//   price: 1700,
-//   brand: "Xiaomi",
-//   color: "white",
-// };
-
-// for (let prop in product) {
-//   console.log(`${prop}: ${product[prop]}`);
-// }
-
-//2.
-// const task = {
-//   subject: "Implement login feature",
-//   createdBy: "Hoang Ngoc Duc",
-//   assignTo: "Nguyen Phuong Nam",
-//   dueDate: "2019-10-08T18:00:24+0000",
-//   expectedHours: 0.5,
-// };
-
-// const { subject, assignTo, dueDate } = task;
-// console.log(`${subject}\n${assignTo}\n${dueDate}`);
-
-//3.
-const jobSearch = {
+//15.
+const jobData = {
   hits: [
     {
       benefits: [
@@ -807,26 +762,73 @@ const jobSearch = {
     },
   ],
 };
-// console.log(jobSearch);
-//3.1.The outermost layer is an object.
-//3.2.The hits property is an array.
-//3.3.We can use object desrtucturing like this, example:
-for (let i = 0; i < jobSearch.hits.length; i++) {
-  const {
-    jobTitle,
-    locations,
-    jobSalary,
-    benefits,
-    skills,
-    jobRequirement,
-  } = jobSearch.hits[i];
-  console.log(`job: ${jobTitle}\nlocation: ${locations}\nsalary: ${jobSalary}`);
-  console.log("benefits:");
-  for (let j = 0; j < benefits.length; j++) {
-    console.log(benefits[j].benefitValue);
-  }
-  console.log(`\nSkills: ${skills}\nrequirement: ${jobRequirement}`);
-  console.log(
-    "------------------------------------------------------------------"
-  );
+//15.1.Get all the job hits
+// console.log(jobData.hits);
+//15.2.Get the first job hit
+// console.log(jobData.hits[0]);
+//15.3.Get jobTitle of the first job
+// const { jobTitle } = jobData.hits[0];
+// console.log(`First job title:\n${jobTitle}`);
+//15.4.Get the benefits of the first job hit
+// const { benefits } = jobData.hits[0];
+// console.log(benefits);
+//15.5.Log out first job hit benefit values
+// console.log("First job hit benefits");
+// for (let i = 0; i < benefits.length; i++) {
+//   console.log(`- ${benefits[i].benefitValue}`);
+// }
+//15.6.Log out jobTitle and benefitValue of all job hits
+// const hitsLength = jobData.hits.length;
+// for (let i = 0; i < hitsLength; i++) {
+//   const { jobTitle, benefits } = jobData.hits[i];
+//   console.log(jobTitle);
+//   console.log("Benefits:");
+//   for (let j = 0; j < benefits.length; j++) {
+//     console.log(`- ${benefits[j].benefitValue}`);
+//   }
+//   console.log(
+//     "------------------------------------------------------------------------------"
+//   );
+// }
+//15.7.Log out jobTitle, locations, skills, jobSalary of all job hits
+// const hitsLength = jobData.hits.length;
+// for (let i = 0; i < hitsLength; i++) {
+//   const { jobTitle, jobSalary, locations, benefits, skills } = jobData.hits[i];
+//   console.log(`Title: ${jobTitle}`);
+//   console.log(`Salary: ${jobSalary}`);
+//   console.log(`Locations:\n- ${locations}`);
+//   console.log("Benefits:");
+//   for (let j = 0; j < benefits.length; j++) {
+//     console.log(`- ${benefits[j].benefitValue}`);
+//   }
+//   console.log("Skills");
+//   for (let j = 0; j < skills.length; j++) {
+//     console.log(`- ${skills[j]}`);
+//   }
+//   console.log(
+//     "------------------------------------------------------------------------------"
+//   );
+// }
+
+//16.
+const oldData = {
+  firedRice: {
+    price: 30,
+    vnName: "Com rang dua bo",
+  },
+  noddle: {
+    price: 20,
+    vnName: "My tom chanh",
+  },
+  pho: {
+    price: 35,
+    vnName: "Pho bo tai chin",
+  },
+};
+let dataSize = Object.keys(oldData).length;
+let count = 0;
+const OBJECT_DEL = prompt("Enter the dish u want to remove").toLowerCase();
+const newData = {};
+if (oldData[OBJECT_DEL] === undefined || oldData[OBJECT_DEL] === null) {
+  alert("No match!");
 }
