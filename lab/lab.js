@@ -107,3 +107,90 @@ const listOfWords = [
   "my",
   "team",
 ];
+let wordsArr = [];
+const ARRAY_LENGTH = listOfWords.length;
+for (let i = 0; i < ARRAY_LENGTH; i++) {
+  let wordCheck = listOfWords[i];
+  if (!wordsArr[wordCheck]) {
+    //check if the word is in wordsArr or not
+    wordsArr[wordCheck] = 1; //if false then add the word and set count = 1
+  } else {
+    wordsArr[wordCheck]++; //if true then count it
+  }
+}
+for (let word in wordsArr) {
+  console.log(`${word}: ${wordsArr[word]}`);
+}
+
+//Part 3.2
+console.log("-----------------------------------------------------------");
+const inventory = [
+  {
+    name: "HP Envy 13aq",
+    price: 21000,
+    brand: "HP",
+    quantity: 5,
+  },
+  {
+    name: "Dell XPS 9370",
+    price: 30000,
+    brand: "Dell",
+    quantity: 1,
+  },
+  {
+    name: "Dell Inspiron 3567",
+    price: 9300,
+    brand: "Dell",
+    quantity: 12,
+  },
+  {
+    name: "Dell Latitude E5450",
+    price: 8600,
+    brand: "Dell",
+    quantity: 2,
+  },
+  {
+    name: "Asus Zenbook",
+    brand: "Asus",
+    price: 20000,
+    quantity: 4,
+  },
+  {
+    name: "HP Pavilion",
+    brand: "HP",
+    price: 14000,
+    quantity: 7,
+  },
+];
+let inventoryByBrand = {};
+const LENGTH = inventory.length;
+for (let i = 0; i < LENGTH; i++) {
+  const { brand } = inventory[i],
+    brandName = brand.toLowerCase();
+  if (inventoryByBrand[brandName]) {
+    inventoryByBrand[brandName].push(inventory[i]);
+  } else {
+    inventoryByBrand[brandName] = [inventory[i]];
+  }
+}
+console.log(inventoryByBrand);
+//part 3.3 -> 3.7
+const INPUT = prompt("Which brand?").toLowerCase();
+let productsList = "",
+  totalValue = 0;
+for (let i = 0; i < inventoryByBrand[INPUT].length; i++) {
+  const { name, price, quantity } = inventoryByBrand[INPUT][i];
+  productsList += `${name}\n`;
+  totalValue += quantity * price;
+}
+if (inventoryByBrand[INPUT]) {
+  alert(
+    `There are(is) ${
+      inventoryByBrand[INPUT].length
+    } generation(s) of ${INPUT.toUpperCase()} in inventory:\n\n${productsList}\nWith total value: ${(
+      totalValue * 1000
+    ).toLocaleString("da-DK", { style: "currency", currency: "VND" })}`
+  );
+} else {
+  alert("No brand match that input!");
+}
