@@ -16,56 +16,94 @@ function randomInRange(min, max) {
 // randomPick();
 
 //Part 1.3
-let manyQuizzes = [
-  {
-    question: "Name the year?",
-    choices: [2017, 2018, 2019, 2020],
-    correct: "d",
-  },
-  {
-    question: "Highest number?",
-    choices: [101012, 220, 111, 300],
-    correct: "a",
-  },
-  {
-    question: "Lowest",
-    choices: [101012, 220, 111, 300],
-    correct: "c",
-  },
-  {
-    question: "Int number?",
-    choices: [2.1, 220, 11.1, 39.3],
-    correct: "b",
-  },
-];
+// let manyQuizzes = [
+//   {
+//     question: "Name the year?",
+//     choices: { a: 2017, b: 2018, c: 2019, d: 2020 },
+//     rightChoice: "d",
+//   },
+//   {
+//     question: "Highest number?",
+//     choices: { a: 101012, b: 220, c: 111, d: 300 },
+//     rightChoice: "a",
+//   },
+//   {
+//     question: "Lowest",
+//     choices: { a: 101012, b: 220, c: 111, d: 300 },
+//     rightChoice: "c",
+//   },
+//   {
+//     question: "Int number?",
+//     choices: { a: 2.1, b: 220, c: 11.1, d: 39.3 },
+//     rightChoice: "b",
+//   },
+// ];
 
-//Part 1.4 -> Part 1.8
-function validateInput(USER_ANSWER, RAND_INDEX, question, choices) {
-  const validate = ["a", "b", "c", "d"];
-  while (validate.indexOf(USER_ANSWER) < 0) {
-    USER_ANSWER = prompt(
-      `${question}\nA. ${choices[0]}\nB. ${choices[1]}\nC. ${choices[2]}\nD. ${choices[3]}`
-    ).toLowerCase();
-  }
-}
-function randomQuiz() {
-  for (let i = 0; i < manyQuizzes.length; i++) {
-    const RAND_INDEX = randomInRange(0, manyQuizzes.length - 1);
-    const { question, choices } = manyQuizzes[RAND_INDEX];
-    let USER_ANSWER = prompt(
-      `${question}\nA. ${choices[0]}\nB. ${choices[1]}\nC. ${choices[2]}\nD. ${choices[3]}`
-    ).toLowerCase();
-    manyQuizzes.splice(RAND_INDEX, 1);
-    //user input validation
-    validateInput(USER_ANSWER, RAND_INDEX, question, choices);
-    if (USER_ANSWER === manyQuizzes[RAND_INDEX].correct) {
-      alert("Bravo!!!");
-    } else {
-      alert("Good luck next time");
-    }
-  }
-  if (manyQuizzes.length === 0) {
-    alert("We are out of questions :c");
-  }
-}
-randomQuiz();
+// //Part 1.4 -> Part 1.7
+// function validateInput(USER_ANSWER, RAND_INDEX, question, choices) {
+//   const validate = ["a", "b", "c", "d"];
+//   while (validate.indexOf(USER_ANSWER) < 0) {
+//     USER_ANSWER = prompt(
+//       `${question}\nA. ${choices.a}\nB. ${choices.b}\nC. ${choices.c}\nD. ${choices.d}`
+//     ).toLowerCase();
+//   }
+// }
+// function randomQuiz() {
+//   let countPoint = 0;
+//   for (let i = 0; i < 4; i++) {
+//     const RAND_INDEX = randomInRange(0, manyQuizzes.length - 1);
+//     console.log(RAND_INDEX);
+//     const { question, choices } = manyQuizzes[RAND_INDEX];
+//     let USER_ANSWER = prompt(
+//       `${question}\nA. ${choices.a}\nB. ${choices.b}\nC. ${choices.c}\nD. ${choices.d}\n`
+//     ).toLowerCase();
+//     //user input validation
+//     console.log(RAND_INDEX);
+//     validateInput(USER_ANSWER, RAND_INDEX, question, choices);
+//     if (USER_ANSWER === manyQuizzes[RAND_INDEX].rightChoice) {
+//       alert("Bravo!!!");
+//       countPoint++;
+//     } else {
+//       alert("Good luck next time");
+//     }
+//     if (manyQuizzes.length === 0) {
+//       alert("We are out of questions :c");
+//     }
+//     manyQuizzes.splice(RAND_INDEX, 1);
+//   }
+//   alert(`Your point(s) are: ${countPoint}`);
+//   if (manyQuizzes.length === 0) {
+//     alert("We are out of questions :c");
+//   }
+// }
+// randomQuiz();
+
+//Part 3
+//part 3.1
+const listOfWords = [
+  "to",
+  "be",
+  "that",
+  "of",
+  "elon",
+  "to",
+  "this",
+  "now",
+  "back",
+  "cool",
+  "hey",
+  "love",
+  "of",
+  "life",
+  "that",
+  "rain",
+  "summer",
+  "color",
+  "now",
+  "of",
+  "hat",
+  "late",
+  "sorry",
+  "my",
+  "team",
+];
