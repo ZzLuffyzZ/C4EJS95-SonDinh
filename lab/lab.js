@@ -161,8 +161,8 @@ const listOfWords = [
   "team",
 ];
 let wordsArr = [];
-const ARRAY_LENGTH = listOfWords.length;
-for (let i = 0; i < ARRAY_LENGTH; i++) {
+const arrayLength = listOfWords.length;
+for (let i = 0; i < arrayLength; i++) {
   let wordCheck = listOfWords[i];
   if (!wordsArr[wordCheck]) {
     //check if the word is in wordsArr or not
@@ -216,8 +216,8 @@ const inventory = [
   },
 ];
 let inventoryByBrand = {};
-const LENGTH = inventory.length;
-for (let i = 0; i < LENGTH; i++) {
+const length = inventory.length;
+for (let i = 0; i < length; i++) {
   const { brand } = inventory[i],
     brandName = brand.toLowerCase();
   if (inventoryByBrand[brandName]) {
@@ -228,19 +228,19 @@ for (let i = 0; i < LENGTH; i++) {
 }
 console.log(inventoryByBrand);
 //part 3.3 -> 3.7
-const INPUT = prompt("Which brand?").toLowerCase();
+const input = prompt("Which brand?").toLowerCase();
 let productsList = "",
   totalValue = 0;
-for (let i = 0; i < inventoryByBrand[INPUT].length; i++) {
+for (let i = 0; i < inventoryByBrand[input].length; i++) {
   const { name, price, quantity } = inventoryByBrand[INPUT][i];
   productsList += `${name}\n`;
   totalValue += quantity * price;
 }
-if (inventoryByBrand[INPUT]) {
+if (inventoryByBrand[input]) {
   alert(
     `There are(is) ${
-      inventoryByBrand[INPUT].length
-    } generation(s) of ${INPUT.toUpperCase()} in inventory:\n\n${productsList}\nWith total value: ${(
+      inventoryByBrand[input].length
+    } generation(s) of ${input.toUpperCase()} in inventory:\n\n${productsList}\nWith total value: ${(
       totalValue * 1000
     ).toLocaleString("da-DK", { style: "currency", currency: "VND" })}`
   );

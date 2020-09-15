@@ -24,33 +24,27 @@ johnCal();
 let BMI_DATA = [
   {
     fullname: "John",
-    mass: 60, //using undefined because no data input yet
-    height: 170, //using undefined because no data input yet
+    mass: 60,
+    height: 170,
+    calBMI: function () {
+      return (this.mass / (this.height / 100) ** 2).toFixed(2);
+    },
   },
   {
     fullname: "Mark",
-    mass: 65, //using undefined because no data input yet
-    height: 180, //using undefined because no data input yet
+    mass: 65,
+    height: 180,
+    calBMI: function () {
+      return (this.mass / (this.height / 100) ** 2).toFixed(2);
+    },
   },
 ];
 function calculation() {
-  let resultBMI = [];
-  for (let i = 0; i < BMI_DATA.length; i++) {
-    let { fullname } = BMI_DATA[i];
-    let data = BMI_DATA[i];
-    data.calBMI = function () {
-      return (this.mass / (this.height / 100) ** 2).toFixed(2);
-    };
-    data.BMI = data.calBMI();
-    resultBMI.push(data.BMI);
-  }
-  const johnResult = resultBMI[0];
-  const markResult = resultBMI[1];
-  if (johnResult > markResult) {
+  if (BMI_DATA[0].calBMI() > BMI_DATA[1].calBMI()) {
     alert(
       `${BMI_DATA[0].fullname} has the highest BMI: ${BMI_DATA[0].calBMI()}`
     );
-  } else if (johnResult < markResult) {
+  } else if (BMI_DATA[0].calBMI() < BMI_DATA[1].calBMI()) {
     alert(
       `${BMI_DATA[1].fullname} has the highest BMI: ${BMI_DATA[1].calBMI()}`
     );
