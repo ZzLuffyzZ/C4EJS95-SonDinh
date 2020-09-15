@@ -78,6 +78,59 @@ function randomInRange(min, max) {
 // }
 // randomQuiz();
 
+//Part 2
+//part 2.1:
+const jobData =
+  "https://gist.githubusercontent.com/qhuydtvt/6870e14e544455f6de6081a83e365b5b/raw/adb147e19259e3ee9b093cb71228026e2417ab09/jobs.js";
+//Data is in the link
+//part 2.2: Get all the job hits
+console.log(jobData.hits);
+//part 2.3: Get the first job hit
+console.log(jobData.hits[0]);
+//part 2.4: Get jobTitle of the first job
+const { jobTitle } = jobData.hits[0];
+console.log(`First job title:\n${jobTitle}`);
+//part 2.5: Get the benefits of the first job hit
+const { benefits } = jobData.hits[0];
+console.log(benefits);
+//part 2.6: Log out first job hit benefit values
+console.log("First job hit benefits");
+for (let i = 0; i < benefits.length; i++) {
+  console.log(`- ${benefits[i].benefitValue}`);
+}
+//part 2.7: Log out jobTitle and benefitValue of all job hits
+const hitsLength = jobData.hits.length;
+for (let i = 0; i < hitsLength; i++) {
+  const { jobTitle, benefits } = jobData.hits[i];
+  console.log(jobTitle);
+  console.log("Benefits:");
+  for (let j = 0; j < benefits.length; j++) {
+    console.log(`- ${benefits[j].benefitValue}`);
+  }
+  console.log(
+    "------------------------------------------------------------------------------"
+  );
+}
+//part 2.8: Log out jobTitle, locations, skills, jobSalary of all job hits
+const hitsLength = jobData.hits.length;
+for (let i = 0; i < hitsLength; i++) {
+  const { jobTitle, jobSalary, locations, benefits, skills } = jobData.hits[i];
+  console.log(`Title: ${jobTitle}`);
+  console.log(`Salary: ${jobSalary}`);
+  console.log(`Locations:\n- ${locations}`);
+  console.log("Benefits:");
+  for (let j = 0; j < benefits.length; j++) {
+    console.log(`- ${benefits[j].benefitValue}`);
+  }
+  console.log("Skills");
+  for (let j = 0; j < skills.length; j++) {
+    console.log(`- ${skills[j]}`);
+  }
+  console.log(
+    "------------------------------------------------------------------------------"
+  );
+}
+
 //Part 3
 //part 3.1
 const listOfWords = [

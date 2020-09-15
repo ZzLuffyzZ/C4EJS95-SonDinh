@@ -21,37 +21,31 @@ function johnCal() {
 johnCal();
 
 //Coding challenge 4
-const BMI_DATA = [
+let BMI_DATA = [
   {
     fullname: "John",
-    mass: 40,
-    height: 160,
-    calBMI: function () {
-      return (this.mass / this.height ** 2).toFixed(2);
-    },
+    mass: 60, //using undefined because no data input yet
+    height: 170, //using undefined because no data input yet
   },
   {
     fullname: "Mark",
-    mass: 60,
-    height: 190,
-    calBMI: function () {
-      return (this.mass / this.height ** 2).toFixed(2);
-    },
+    mass: 65, //using undefined because no data input yet
+    height: 180, //using undefined because no data input yet
   },
 ];
 function calculation() {
+  let resultBMI = [];
   for (let i = 0; i < BMI_DATA.length; i++) {
-    const { fullname } = BMI_DATA[i];
-    do {
-      BMI_DATA[i].mass = prompt(`${fullname} enter your mass`) - 0;
-      BMI_DATA[i].height = prompt(`${fullname} enter your height`) / 100;
-    } while (
-      BMI_DATA[i].mass !== undefined &&
-      BMI_DATA[i].height !== undefined
-    );
+    let { fullname } = BMI_DATA[i];
+    let data = BMI_DATA[i];
+    data.calBMI = function () {
+      return (this.mass / (this.height / 100) ** 2).toFixed(2);
+    };
+    data.BMI = data.calBMI();
+    resultBMI.push(data.BMI);
   }
-  const johnResult = BMI_DATA[0].calBMI();
-  const markResult = BMI_DATA[1].calBMI();
+  const johnResult = resultBMI[0];
+  const markResult = resultBMI[1];
   if (johnResult > markResult) {
     alert(
       `${BMI_DATA[0].fullname} has the highest BMI: ${BMI_DATA[0].calBMI()}`
@@ -64,5 +58,4 @@ function calculation() {
     alert(`Both have the same BMI: ${BMI_DATA[0].calBMI()}`);
   }
 }
-
 calculation();
