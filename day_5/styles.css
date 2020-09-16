@@ -16,6 +16,7 @@
   align-items: center;
   padding: 2rem;
   background-color: mediumseagreen;
+  box-shadow: 2px 2px 4px #000000;
   border-radius: 1.5rem;
 }
 
@@ -25,6 +26,7 @@ img,
   border-radius: 100%;
   width: 200px;
   height: 200px;
+  box-shadow: 2px 2px 4px #000000;
 }
 .intro {
   display: inline-block;
@@ -40,6 +42,7 @@ img,
   font-size: 60px;
   letter-spacing: 2px;
   color: white;
+  text-shadow: 2px 2px 4px #000000;
 }
 .intro h3 {
   text-transform: uppercase;
@@ -55,6 +58,7 @@ img,
 .landing-body {
   border-radius: 1.5rem;
   background-color: mediumseagreen;
+  box-shadow: 2px 2px 4px #000000;
   margin-top: 1.5rem;
   padding: 2rem;
   display: inline-block;
