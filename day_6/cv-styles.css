@@ -326,23 +326,15 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  /* background: linear-gradient(#0b7080, #0ba376); */
-  /* background: lightgray; */
-  background: black;
+  background: gray;
   border-radius: 1.8rem;
 }
-/* ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#0b7080, #0ba376);
-  transition: all 0.5s ease;
-} */
+  transition: 0.5s all ease;
+}
 
 /* ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-corner {
   display: none;
-} */
-
-/* .container {
-  height: 600;
-  max-height: 600;
-  padding-right: 10px;
 } */
