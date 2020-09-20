@@ -7,36 +7,18 @@
   overflow: hidden;
 }
 
-.body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-li {
-  margin: 0;
-}
-
 body {
   background: whitesmoke;
 }
 
 .cv {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
   padding: 0 100px;
   overflow: hidden;
 }
 
 .cv-content {
   max-width: 1280px;
-  width: 100%;
-  min-height: 80vh;
-  height: auto;
-  display: flex;
+
   margin: 10vh auto;
   font-family: Poppins, sans-serif;
   background: linear-gradient(#0b7080, #0ba376);
@@ -48,21 +30,16 @@ body {
   float: left;
   width: 100%;
   max-width: 380px;
-  height: 100%;
-  max-height: 80vh;
-  min-height: inherit;
+
   text-align: center;
   padding: 70px 30px 45px;
-  overflow: auto;
 }
 
 .profile-img img {
-  max-width: 100%;
-  width: 180px;
   height: 180px;
   background-color: white;
   border-radius: 100%;
-  border: 3px solid white;
+  border: 1.5px solid white;
   box-shadow: 2px 2px 6px #000000;
 }
 
@@ -72,7 +49,7 @@ body {
   font-size: 34px;
   color: white;
   text-shadow: 2px 2px 4px #000000;
-  line-height: 1.2em;
+
   margin: 5px 0 7px;
 }
 
@@ -90,24 +67,22 @@ body {
 
 .social-links ul li {
   list-style: none;
-  padding: 0;
+
   display: inline-block;
 }
 
 .social-links a {
   display: block;
   color: white;
-  border-radius: 22px;
+
   margin: auto 10px;
   font-size: 30px;
   height: 60px;
-  width: 60px;
-  line-height: 30px;
+
   opacity: 0.9;
 }
 
 .social-links i {
-  /* background-color: white; */
   padding: 12px;
   width: 60px;
   height: 60px;
@@ -124,15 +99,12 @@ body {
 }
 
 .contacts {
-  margin-top: 1rem;
-  /* border-top: 2px solid white; */
   padding-top: 1.5rem;
 }
 
 .contacts ul li {
-  padding: 0;
   list-style: none;
-  border-radius: 22px;
+
   color: white;
   height: 60px;
   line-height: 25px;
@@ -145,19 +117,13 @@ body {
 }
 
 section {
-  position: relative;
   background-color: white;
   max-height: 80vh;
-  min-height: inherit;
-  height: 100%;
-  max-width: 900px;
-  width: 100%;
+
   border-radius: 1.8rem;
-  margin-right: auto;
+
   padding: 60px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -175,10 +141,6 @@ section {
 }
 
 .block-title {
-  display: inline-block;
-  max-width: 100%;
-  position: relative;
-  padding-right: 25px;
   padding-bottom: 15px;
   margin-bottom: 5px;
 }
@@ -189,24 +151,21 @@ section {
 
 .block-title .deco {
   border: 1px solid #0ba376;
-  border-radius: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 0.25rem;
+
+  margin-top: 0.8rem;
+
   width: 900px;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+
   margin-right: -15px;
   margin-left: -15px;
 }
 
 .column1,
 .column2 {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
   padding-right: 15px;
   flex: 0 0 50%;
   max-width: 50%;
@@ -216,14 +175,7 @@ section {
   margin-bottom: 25px;
 }
 
-.block-w-icon .cl-icon {
-  display: table-cell;
-  width: 55px;
-  padding-right: 25px;
-}
-
 .block-w-icon i {
-  position: relative;
   color: #0ba376;
   width: 55px;
   height: 55px;
@@ -237,7 +189,6 @@ section {
 }
 
 .timeline .timeline-data {
-  position: relative;
   display: table;
   table-layout: fixed;
   width: 100%;
@@ -248,7 +199,7 @@ section {
   width: 30%;
   display: table-cell;
   padding-right: 25px;
-  min-height: 100%;
+
   text-align: right;
   vertical-align: top;
 }
@@ -261,19 +212,19 @@ section {
 
 .timeline .company {
   display: block;
-  margin: 0 0 4px;
+
   font-size: 12px;
-  font-weight: 300;
+
   line-height: 1.45em;
   color: #595a5c;
 }
 
 .timeline .divider {
   border: 2px solid #0ba376;
-  background-color: #ffffff;
+
   height: 160px;
   margin-top: 5px;
-  max-height: 100%;
+
   border-radius: 2rem;
 }
 
@@ -287,11 +238,6 @@ section {
 
 .right-side p {
   font-size: 14px;
-  font-weight: 400;
-}
-
-.skills {
-  margin-bottom: 30px;
 }
 
 .skills .skill-data h4 {
@@ -305,20 +251,18 @@ section {
 .skills .skill-value {
   font-size: 12px;
   line-height: 1.1em;
-  position: relative;
+
   float: right;
   margin: 0 0 4px;
   color: #595a5c;
 }
 
 .skills .percentage-container {
-  position: relative;
   display: inline-block;
-  background-color: #ffffff;
+
   border: 1px solid #0ba376;
   border-radius: 8px;
-  box-sizing: border-box;
-  height: 10px;
+
   margin-bottom: 8px;
   width: 100%;
 }
@@ -362,19 +306,19 @@ section {
 .knowledges li {
   display: inline-block;
   background-color: #0ba376;
-  border-radius: 3px;
+  border-radius: 1rem;
   color: white;
   padding: 1px 10px;
-  margin: 3px 2px;
+  margin: 2px 1px;
   font-size: 13px;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
-::-webkit-scrollbar-track-piece {
-  /* background: white; */
-}
+/* ::-webkit-scrollbar-track-piece {
+  background: white;
+}*/
 ::-webkit-scrollbar-track {
   border-radius: 1.8rem;
   border: 5px solid lightgray;
@@ -382,21 +326,23 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#0b7080, #0ba376);
+  /* background: linear-gradient(#0b7080, #0ba376); */
   /* background: lightgray; */
+  background: black;
   border-radius: 1.8rem;
 }
 /* ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#0b7080, #0ba376);
-  transition: 0.5 all ease;
+  transition: all 0.5s ease;
 } */
 
-::-webkit-scrollbar-button,
+/* ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-corner {
   display: none;
-}
+} */
 
-.container {
+/* .container {
   height: 600;
-  margin-right: 10px;
-}
+  max-height: 600;
+  padding-right: 10px;
+} */
