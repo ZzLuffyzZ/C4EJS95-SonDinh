@@ -28,7 +28,6 @@ body {
 }
 
 .cv-left {
-  width: 100%;
   flex: 30%;
   text-align: center;
   padding: 70px 30px 45px;
