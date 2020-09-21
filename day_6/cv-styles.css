@@ -17,6 +17,8 @@ body {
 }
 
 .cv-content {
+  display: flex;
+  flex-direction: row;
   max-width: 1280px;
   margin: 10vh auto;
   font-family: Poppins, sans-serif;
@@ -26,11 +28,14 @@ body {
 }
 
 .cv-left {
-  float: left;
   width: 100%;
-  max-width: 380px;
+  flex: 30%;
   text-align: center;
   padding: 70px 30px 45px;
+}
+
+.cv-right {
+  flex: 70%;
 }
 
 .profile-img img {
