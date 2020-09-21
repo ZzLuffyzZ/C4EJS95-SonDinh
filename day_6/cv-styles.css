@@ -18,7 +18,6 @@ body {
 
 .cv-content {
   max-width: 1280px;
-
   margin: 10vh auto;
   font-family: Poppins, sans-serif;
   background: linear-gradient(#0b7080, #0ba376);
@@ -30,7 +29,6 @@ body {
   float: left;
   width: 100%;
   max-width: 380px;
-
   text-align: center;
   padding: 70px 30px 45px;
 }
@@ -49,7 +47,6 @@ body {
   font-size: 34px;
   color: white;
   text-shadow: 2px 2px 4px #000000;
-
   margin: 5px 0 7px;
 }
 
@@ -67,18 +64,15 @@ body {
 
 .social-links ul li {
   list-style: none;
-
   display: inline-block;
 }
 
 .social-links a {
   display: block;
   color: white;
-
   margin: auto 10px;
   font-size: 30px;
   height: 60px;
-
   opacity: 0.9;
 }
 
@@ -104,7 +98,6 @@ body {
 
 .contacts ul li {
   list-style: none;
-
   color: white;
   height: 60px;
   line-height: 25px;
@@ -119,11 +112,8 @@ body {
 section {
   background-color: white;
   max-height: 80vh;
-
   border-radius: 1.8rem;
-
   padding: 60px;
-
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -151,15 +141,12 @@ section {
 
 .block-title .deco {
   border: 1px solid #0ba376;
-
   margin-top: 0.8rem;
-
   width: 900px;
 }
 
 .row {
   display: flex;
-
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -199,7 +186,6 @@ section {
   width: 30%;
   display: table-cell;
   padding-right: 25px;
-
   text-align: right;
   vertical-align: top;
 }
@@ -212,19 +198,15 @@ section {
 
 .timeline .company {
   display: block;
-
   font-size: 12px;
-
   line-height: 1.45em;
   color: #595a5c;
 }
 
 .timeline .divider {
   border: 2px solid #0ba376;
-
   height: 160px;
   margin-top: 5px;
-
   border-radius: 2rem;
 }
 
@@ -251,7 +233,6 @@ section {
 .skills .skill-value {
   font-size: 12px;
   line-height: 1.1em;
-
   float: right;
   margin: 0 0 4px;
   color: #595a5c;
@@ -259,10 +240,8 @@ section {
 
 .skills .percentage-container {
   display: inline-block;
-
   border: 1px solid #0ba376;
   border-radius: 8px;
-
   margin-bottom: 8px;
   width: 100%;
 }
@@ -314,27 +293,9 @@ section {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-}
-/* ::-webkit-scrollbar-track-piece {
-  background: white;
-}*/
-::-webkit-scrollbar-track {
-  border-radius: 1.8rem;
-  border: 5px solid lightgray;
-  box-shadow: inset 0 0 2.5px rgba(0, 0, 0, 0.5);
+  width: 1px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: gray;
-  border-radius: 1.8rem;
-}
-::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#0b7080, #0ba376);
-  transition: 0.5s all ease;
 }
-
-/* ::-webkit-scrollbar-button,
-::-webkit-scrollbar-corner {
-  display: none;
-} */
