@@ -78,21 +78,26 @@
 //Question 11:
 //11.1.Write an HTML for the UI above, create and link a JS file to it
 //11.2.Get (Read) the ‘Upper it!!’ button
-const readBtn = document.getElementById("upper_btn");
-console.log(readBtn);
-//11.3->11.8
-const readInput = document.getElementById("name_input");
-console.log(readInput);
-const readDiv = document.getElementById("result_div");
-console.log(readDiv);
-console.log(readDiv.innerText.toUpperCase());
-upper_btn.addEventListener("click", () => {
-  console.log("Upper it!!!! just clicked");
-  const readElementInput = document.getElementById("name_input");
-  console.log(`User's name: ${readElementInput.value}`);
-  console.log(`User's name uppercase: ${readElementInput.value.toUpperCase()}`);
-});
+// const readBtn = document.getElementById("upper_btn");
+// console.log(readBtn);
+// //11.3->11.8
+// const readInput = document.getElementById("name_input");
+// console.log(readInput);
+// const readDiv = document.getElementById("result_div");
+// console.log(readDiv);
+// console.log(readDiv.innerText.toUpperCase());
+// upper_btn.addEventListener("click", () => {
+//   console.log("Upper it!!!! just clicked");
+//   const readElementInput = document.getElementById("name_input");
+//   console.log(`User's name: ${readElementInput.value}`);
+//   console.log(`User's name uppercase: ${readElementInput.value.toUpperCase()}`);
+// });
 
 //Question 12:
 //12.1.In JS, Initialize a variable named items to store the data above, log/print it out
 const items = ["Backpack", "MiBand watch", "Ring"];
+console.log(items);
+//12.3.Get (Read) the list from DOM
+const getItemsList = document.getElementById("item_list_ul");
+console.log(getItemsList);
+//12.4.Show ALL of the data in items, each item is a <li> tag
