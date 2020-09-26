@@ -94,15 +94,14 @@
 // });
 
 //Question 12:
-//12.1.In JS, Initialize a variable named items to store the data above, log/print it out
+
 const items = ["Backpack", "MiBand watch", "Ring"];
 const getItemsList = document.getElementById("item_list_ul");
 const getInput = document.getElementById("item_input");
 const getAddBtn = document.getElementById("add_btn");
 console.log(items);
-//12.3.Get (Read) the list from DOM
 console.log(getItemsList);
-//12.4.Show ALL of the data in items, each item is a <li> tag
+
 const addElement = (arr) => {
   getItemsList.innerHTML = "";
   for (let i = 0; i < items.length; i++) {
@@ -113,10 +112,10 @@ const addElement = (arr) => {
   }
 };
 addElement(items);
-//12.6.Get the ‘New item’ input and ‘Add’ button
+
 console.log(getInput);
 console.log(getAddBtn);
-//12.7->12.11
+
 getAddBtn.addEventListener("click", () => {
   console.log("Add button clicked");
   console.log("flip flop");
@@ -125,13 +124,18 @@ getAddBtn.addEventListener("click", () => {
   getInput.value = "";
   console.log(items);
 });
-//12.12.
+
 const getRemoveBtn = document.getElementsByClassName("remove_btn");
-for (let i = 0; i < items.length; i++) {
-  getRemoveBtn[i].addEventListener("click", (e) => {
-    console.log("Remove");
-    console.log(`Item: ${i}`);
-    items.splice(i, 1);
-    console.log(items);
-  });
-}
+const addRemoveBtnListener = (items) => {
+  for (let i = 0; i < items.length; i++) {
+    getRemoveBtn[i].addEventListener("click", () => {
+      console.log("Remove");
+      console.log(`Item: ${i}`);
+      items.splice(i, 1);
+      addElement(items);
+      addRemoveBtnListener(items);
+      console.log(items);
+    });
+  }
+};
+addRemoveBtnListener(items);
