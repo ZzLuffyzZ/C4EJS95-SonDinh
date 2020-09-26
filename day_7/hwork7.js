@@ -102,12 +102,13 @@ const getAddBtn = document.getElementById("add_btn");
 console.log(items);
 console.log(getItemsList);
 
+//Create new li tag with remove button
 const addElement = (arr) => {
   getItemsList.innerHTML = "";
-  for (let i = 0; i < items.length; i++) {
+  for (let item of items) {
     getItemsList.insertAdjacentHTML(
       "beforeend",
-      `<li><span>${items[i]}</span> <button class="remove_btn">remove</button></li>`
+      `<li><span>${item}</span> <button class ="remove_btn">remove</button></li>`
     );
   }
 };
@@ -116,24 +117,25 @@ addElement(items);
 console.log(getInput);
 console.log(getAddBtn);
 
+//Event listener for the add button
 getAddBtn.addEventListener("click", () => {
   console.log("Add button clicked");
   console.log("flip flop");
   items.push(getInput.value);
   addElement(items);
+  addRemoveBtnListener(items);
   getInput.value = "";
   console.log(items);
 });
-
+// add listener for remove button
 const getRemoveBtn = document.getElementsByClassName("remove_btn");
 const addRemoveBtnListener = (items) => {
   for (let i = 0; i < items.length; i++) {
     getRemoveBtn[i].addEventListener("click", () => {
       console.log("Remove");
       console.log(`Item: ${i}`);
+      getItemsList.removeChild(getItemsList.childNodes[0]);
       items.splice(i, 1);
-      addElement(items);
-      addRemoveBtnListener(items);
       console.log(items);
     });
   }
