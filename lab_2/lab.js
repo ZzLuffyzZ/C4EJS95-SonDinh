@@ -389,16 +389,16 @@ const removeLine = (event) => {
   tr.parentNode.removeChild(tr);
 };
 const updateLine = (event) => {
-  let rowData = event.target.parentNode.parentNode;
+  let rowData = event.target.parentNode;
   addBtn.innerHTML = "Update";
-  rowData.innerHTML = `
-  <tr>
-    <td>${data.project}</td>
-    <td>${data.task}</td>
-    <td>${data.timeSpent}</td>
-    <td style="text-align: center;"><button id="remove-btn" onclick="removeLine(event)">X<button></td>
-    <td><button id="update-btn" onclick="updateLine(event)">U<button></td>
-  </tr>
-  `;
+  // rowData.innerHTML = `
+  // <tr>
+  //   <td>${data.project}</td>
+  //   <td>${data.task}</td>
+  //   <td>${data.timeSpent}</td>
+  //   <td style="text-align: center;"><button id="remove-btn" onclick="removeLine(event)">X<button></td>
+  //   <td><button id="update-btn" onclick="updateLine(event)">U<button></td>
+  // </tr>
+  // `;
 };
 // end of timesheet
