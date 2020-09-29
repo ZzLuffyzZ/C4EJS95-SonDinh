@@ -135,7 +135,6 @@ const addRemoveBtnListener = (items) => {
       console.log("Remove");
       console.log(`Item: ${i}`);
       getItemsList.removeChild(getItemsList.childNodes[0]);
-      console.log(items[i]);
       items.splice(i, 1);
       console.log(items);
     });
