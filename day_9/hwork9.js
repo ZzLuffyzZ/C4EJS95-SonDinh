@@ -83,5 +83,28 @@ fetchData
   })
   .then((quotesList) => {
     console.log(quotesList);
+    const {
+      contents: {
+        quotes: {
+          0: { quote, author },
+        },
+      },
+    } = quotesList;
+    console.log(`${quote}\n${author}`);
+
+    const quoteText = document.getElementById("quote-text"),
+      quoteAuthor = document.getElementById("quote-author");
+    quoteText.innerHTML = `${quote}`;
+    quoteAuthor.innerHTML = `${author}`;
   });
-// console.log(`${quote}\n${author}`);
+
+//Question 8:
+import SheetDB from "e:/Mindx/C4EJS95/node_modules/sheetdb-js/build/sheetdb-js";
+
+SheetDB.read("https://sheetdb.io/api/v1/5io4ml89qwvv6", {})
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
