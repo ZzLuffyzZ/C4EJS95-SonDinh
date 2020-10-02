@@ -76,35 +76,33 @@
 // }
 
 //Question 7:
-const fetchData = fetch("http://quotes.rest/qod.json");
-fetchData
-  .then((jsonPromise) => {
-    return jsonPromise.json();
-  })
-  .then((quotesList) => {
-    console.log(quotesList);
-    const {
-      contents: {
-        quotes: {
-          0: { quote, author },
-        },
-      },
-    } = quotesList;
-    console.log(`${quote}\n${author}`);
+// fetch("http://quotes.rest/qod.json")
+//   .then((jsonPromise) => {
+//     return jsonPromise.json();
+//   })
+//   .then((quotesList) => {
+//     console.log(quotesList);
+//     const {
+//       contents: {
+//         quotes: {
+//           0: { quote, author },
+//         },
+//       },
+//     } = quotesList;
+//     console.log(`${quote}\n${author}`);
 
-    const quoteText = document.getElementById("quote-text"),
-      quoteAuthor = document.getElementById("quote-author");
-    quoteText.innerHTML = `${quote}`;
-    quoteAuthor.innerHTML = `${author}`;
-  });
+//     const quoteText = document.getElementById("quote-text"),
+//       quoteAuthor = document.getElementById("quote-author");
+//     quoteText.innerHTML = `${quote}`;
+//     quoteAuthor.innerHTML = `${author}`;
+//   });
 
 //Question 8:
-import SheetDB from "e:/Mindx/C4EJS95/node_modules/sheetdb-js/build/sheetdb-js";
-
-SheetDB.read("https://sheetdb.io/api/v1/5io4ml89qwvv6", {})
+axios
+  .get("https://sheetdb.io/api/v1/5io4ml89qwvv6")
   .then((result) => {
-    console.log(result);
+    result.json();
   })
-  .catch((err) => {
-    console.log(err);
+  .then((dataList) => {
+    console.log(dataList);
   });
