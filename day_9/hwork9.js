@@ -98,11 +98,25 @@
 //   });
 
 //Question 8:
-axios
-  .get("https://sheetdb.io/api/v1/5io4ml89qwvv6")
-  .then((result) => {
-    result.json();
-  })
-  .then((dataList) => {
-    console.log(dataList);
-  });
+axios.get("https://sheetdb.io/api/v1/5io4ml89qwvv6").then((response) => {
+  console.log(response.data);
+});
+
+const wishInput = document.getElementById("wish-input"),
+  addBtn = document.getElementById("add-btn");
+
+addBtn.addEventListener("click", () => {
+  axios
+    .post("https://sheetdb.io/api/v1/5io4ml89qwvv6", {
+      data: {
+        id: 1,
+        name: `${wishInput.value}`,
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+    });
+});
+// axios.get("https://sheetdb.io/api/v1/5io4ml89qwvv6").then((response) => {
+//   console.log(response.data);
+// });
