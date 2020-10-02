@@ -98,25 +98,57 @@
 //   });
 
 //Question 8:
-axios.get("https://sheetdb.io/api/v1/5io4ml89qwvv6").then((response) => {
-  console.log(response.data);
-});
-
 const wishInput = document.getElementById("wish-input"),
-  addBtn = document.getElementById("add-btn");
+  addBtn = document.getElementById("add-btn"),
+  wishDisplay = document.getElementById("wish-display");
 
+//generate random id
+const randID = () => {
+  return Math.random().toString(20).substr(2, 6);
+};
+
+//Get data from api then display it
+const getData = () => {
+  axios.get("https://sheetdb.io/api/v1/5io4ml89qwvv6").then((response) => {
+    wishDisplay.innerHTML = "";
+    console.log(response.data);
+    for (let i = 0; i < response.data.length; i++) {
+      const { id, name } = response.data[i];
+      wishDisplay.innerHTML += `
+        <p style="margin-bottom: -15px"> ${
+          i + 1
+        }. ${name} <button id="delete-row-btn">X</button></p>
+      `;
+      addDelBtnListener(id);
+    }
+  });
+};
+getData();
+
+//Add post func to add button
 addBtn.addEventListener("click", () => {
   axios
     .post("https://sheetdb.io/api/v1/5io4ml89qwvv6", {
       data: {
-        id: 1,
+        id: randID(),
         name: `${wishInput.value}`,
       },
     })
     .then((response) => {
+      addDelBtnListener(response.data.id);
       console.log(response.data);
+      getData();
     });
+  wishInput.value = "";
 });
-// axios.get("https://sheetdb.io/api/v1/5io4ml89qwvv6").then((response) => {
-//   console.log(response.data);
-// });
+
+//Add delete func to delete row button
+const addDelBtnListener = (id) => {
+  delBtn = document.getElementById("delete-row-btn");
+  // for (let i = 0; i < response.length; i++) {
+  delBtn.addEventListener("click", (id) => {
+    axios.delete(`https://sheetdb.io/api/v1/5io4ml89qwvv6/id/${id}`);
+    getData();
+  });
+  // }
+};
