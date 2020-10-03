@@ -141,7 +141,7 @@ addBtn.addEventListener("click", () => {
       console.log(response.data);
       getData();
     })
-    .then((itemID) => {
+    .then(() => {
       addDelBtnListener(itemID);
     });
   wishInput.value = "";
