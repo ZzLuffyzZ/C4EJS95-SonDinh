@@ -108,6 +108,7 @@ const randID = () => {
 };
 
 //Get data from api then display it
+let itemList = [];
 const getData = () => {
   axios.get("https://sheetdb.io/api/v1/5io4ml89qwvv6").then((response) => {
     wishDisplay.innerHTML = "";
@@ -127,17 +128,20 @@ getData();
 
 //Add post func to add button
 addBtn.addEventListener("click", () => {
+  itemID = randID();
   axios
     .post("https://sheetdb.io/api/v1/5io4ml89qwvv6", {
       data: {
-        id: randID(),
+        id: `${itemID}`,
         name: `${wishInput.value}`,
       },
     })
     .then((response) => {
-      addDelBtnListener(response.data.id);
       console.log(response.data);
       getData();
+    })
+    .then(() => {
+      addDelBtnListener(itemID);
     });
   wishInput.value = "";
 });
@@ -146,8 +150,9 @@ addBtn.addEventListener("click", () => {
 const addDelBtnListener = (id) => {
   delBtn = document.getElementById("delete-row-btn");
   // for (let i = 0; i < response.length; i++) {
-  delBtn.addEventListener("click", (id) => {
-    axios.delete(`https://sheetdb.io/api/v1/5io4ml89qwvv6/id/${id}`);
+  delBtn.addEventListener("click", () => {
+    // axios.delete(`https://sheetdb.io/api/v1/5io4ml89qwvv6/name/${id}`);
+    console.log(id);
     getData();
   });
   // }
