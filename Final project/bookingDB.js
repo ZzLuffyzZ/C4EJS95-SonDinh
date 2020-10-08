@@ -4,12 +4,16 @@ const user = [
     name: "user name 1",
     age: 18,
     address: "Address 1",
+    phone: 0987654376,
+    mail: "qwerty@gmail.com"
   },
   {
     id: 2,
     name: "user name 2",
     age: 18,
     address: "Address 2",
+    phone: 0967342565,
+    mail: "abcxyz@gmail.com"
   },
 ];
 
@@ -18,11 +22,15 @@ const hotel = [
     id: 1,
     name: "hotel A",
     address: "address A",
+    phone: 19006886,
+    mail: "fghjkl@gmail.com"
   },
   {
     id: 2,
     name: "hotel B",
     address: "address B",
+    phone: 19005645,
+    mail: " yuiuopiy@gmail.com",
   },
 ];
 
